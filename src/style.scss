@@ -1,0 +1,144 @@
+$background-color: #adf7a0;
+$primary-color: #03a853;
+$vertical-padding: 30px;
+$horizontal-padding: 50px;
+
+body {
+  font-family: "Roboto", sans-serif;
+  color: $primary-color;
+  background-color: $background-color;
+}
+
+#app {
+  font-size: 48px;
+  line-height: 58px;
+  max-width: 1000px;
+  margin: 60px auto;
+  border: 4px solid $primary-color;
+}
+
+#todo-input-wrapper {
+  border-bottom: 4px solid $primary-color;
+
+  form {
+    display: flex;
+    align-items: center;
+    padding: $vertical-padding $horizontal-padding;
+
+    input[type="text"] {
+      color: white;
+      font-size: 48px;
+      line-height: 58px;
+      background: none;
+      border: none;
+      outline: none;
+      flex-grow: 1;
+      display: inline-block;
+    }
+
+    ::placeholder {
+      color: $primary-color;
+    }
+
+    button[type="submit"] {
+      color: $primary-color;
+      background: none;
+      border: none;
+      outline: none;
+      font-size: 48px;
+      line-height: 48px;
+      display: inline-block;
+
+      i.icon {
+        font-size: 48px;
+        line-height: 1;
+        display: inline-block;
+        cursor: pointer;
+
+        &:hover {
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+#todo-list-wrapper {
+  .todo-item {
+    display: flex;
+    align-items: center;
+    border-bottom: 4px solid $primary-color;
+
+    .todo-text {
+      flex-grow: 1;
+      padding: $vertical-padding $horizontal-padding;
+    }
+
+    &.completed {
+      .todo-text {
+        text-decoration: line-through;
+      }
+    }
+
+    .todo-mark-done,
+    .todo-delete,
+    .todo-mark-undone {
+      button {
+        color: $primary-color;
+        font-size: 48px;
+        line-height: 58px;
+        border: none;
+        outline: none;
+        background: none;
+        display: inline-block;
+        padding: $vertical-padding ($horizontal-padding - 10px);
+        border-left: 4px solid $primary-color;
+        cursor: pointer;
+
+        &:hover {
+          background: $primary-color;
+          color: white;
+        }
+      }
+    }
+    .todo-mark-undone {
+      button {
+        border-left: none;
+      }
+    }
+  }
+}
+
+#todo-sort-by-wrapper {
+  display: flex;
+  padding: ($vertical-padding + 20px) ($horizontal-padding - 30px) ($vertical-padding + 20px) ($horizontal-padding);
+  color: $background-color;
+  background-color: $primary-color;
+  font-size: 36px;
+  line-height: 1;
+  align-items: center;
+
+  .line-separator {
+    flex-grow: 1;
+    background-color: $background-color;
+    height: 4px;
+    margin: 30px;
+  }
+
+  #sort-options-wrapper {
+    display: flex;
+
+    .option {
+      cursor: pointer;
+      padding: 10px 30px;
+
+      &.active {
+        color: white;
+      }
+
+      &:hover {
+        color: white;
+      }
+    }
+  }
+}
